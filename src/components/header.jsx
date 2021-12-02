@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartIcon from "./cart-icon";
 
 import { ReactComponent as Logo } from "../assets/crown.svg";
 
@@ -17,6 +18,7 @@ const Header = () => (
       <Link className="option" to="/shop">
         CONTACT
       </Link>
+      <CartIcon />
     </div>
   </div>
 );
