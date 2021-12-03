@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import CartIcon from "./cart-icon";
 import CartDropdown from "./cart-dropdown";
@@ -7,7 +8,7 @@ import { ReactComponent as Logo } from "../assets/crown.svg";
 
 import "../styles/header.scss";
 
-const Header = () => (
+const Header = ({ hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -21,8 +22,11 @@ const Header = () => (
       </Link>
       <CartIcon />
     </div>
-    <CartDropdown />
+    {hidden ? null : <CartDropdown />}
   </div>
 );
+const mapStateToProps = ({ cart: { hidden } }) => ({
+  hidden,
+});
 
-export default Header;
+export default connect(mapStateToProps)(Header);
