@@ -8,7 +8,7 @@ import ShopPage from "./pages/shop/shop";
 import Header from "./components/header";
 import CheckoutPage from "./pages/checkout/checkout";
 
-function App() {
+const App=()=>{
   return (
     <div>
       <Header />
